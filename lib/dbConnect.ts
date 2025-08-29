@@ -20,12 +20,8 @@ if (!MONGODB_URI) {
   );
 }
 
-let cached: MongooseCache = (globalThis.mongoose as MongooseCache | undefined) ?? { conn: null, promise: null };
-
-if (!cached) {
-  cached = { conn: null, promise: null };
-  globalThis.mongoose = cached;
-}
+// Use globalThis for compatibility
+let cached = globalThis.mongoose ?? (globalThis.mongoose = { conn: null, promise: null });
 
 async function dbConnect() {
   if (cached.conn) {

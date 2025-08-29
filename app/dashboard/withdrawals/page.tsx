@@ -235,7 +235,7 @@ export default function WithdrawalsPage() {
                     <span className="font-bold text-red-400">${fee}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Final Amount You'll Receive:</span>
+                    <span>Final Amount You&apos;ll Receive:</span>
                     <span className="font-bold text-green-400">
                       ${amount ? (Number(amount) - fee).toFixed(2) : "0"}
                     </span>
